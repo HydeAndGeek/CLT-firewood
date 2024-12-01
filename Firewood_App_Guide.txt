@@ -1,0 +1,195 @@
+
+# Firewood Store Application Guide
+
+This document provides the full guide, code, and steps to create a simple web application for your firewood business.
+
+---
+
+## Features
+1. Showcase firewood types with pricing and images.
+2. QR code integration for quick access to the order page.
+3. Order form for customer details.
+
+---
+
+## HTML Files
+
+### `index.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firewood Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
+    header {
+      background-color: #663300;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .container {
+      padding: 1rem;
+    }
+    .product {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background: #fff;
+    }
+    .product img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .product h3 {
+      color: #333;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #663300;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Firewood Store</h1>
+  </header>
+  <div class="container">
+    <div class="product">
+      <img src="firewood1.jpg" alt="Firewood Bundle">
+      <h3>Premium Firewood</h3>
+      <p>$20 per bundle</p>
+      <a href="order.html" class="btn">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="firewood2.jpg" alt="Bulk Firewood">
+      <h3>Bulk Firewood</h3>
+      <p>$150 per half cord</p>
+      <a href="order.html" class="btn">Order Now</a>
+    </div>
+  </div>
+</body>
+</html>
+```
+
+### `order.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place Your Order</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
+    .container {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 0.7rem;
+      background-color: #663300;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Order Firewood</h2>
+    <form id="orderForm">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" name="phone" required>
+
+      <label for="address">Delivery Address</label>
+      <input type="text" id="address" name="address" required>
+
+      <label for="product">Select Product</label>
+      <select id="product" name="product" required>
+        <option value="premium">Premium Firewood ($20/bundle)</option>
+        <option value="bulk">Bulk Firewood ($150/half cord)</option>
+      </select>
+
+      <button type="submit" class="btn">Place Order</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Order placed successfully!');
+    });
+  </script>
+</body>
+</html>
+```
+
+---
+
+## Deployment Steps
+
+### **1. Create GitHub Repository**
+1. Visit [GitHub](https://github.com) and log in.
+2. Create a new repository (e.g., `firewood-store`).
+3. Upload the `index.html`, `order.html`, and images (firewood1.jpg, firewood2.jpg).
+
+### **2. Deploy with Vercel**
+1. Visit [Vercel](https://vercel.com) and sign up.
+2. Connect your GitHub repository to Vercel.
+3. Click **Deploy** and get a public URL for your app.
+
+---
+
+## QR Code Integration
+1. Use [QR Code Generator](https://www.qr-code-generator.com/) to create QR codes for `order.html`.
+2. Print and attach QR codes to firewood samples.
+
+---
+
+This document can be uploaded to GitHub Copilot or used for manual deployment.
